@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Phone, MessageCircle, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
@@ -50,6 +57,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
+              onClick={() => scrollToSection("contact")}
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect px-8 py-6 text-base font-medium"
             >
               Start Your Project
@@ -58,10 +66,35 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => scrollToSection("packages")}
               className="border-border/50 bg-muted/30 hover:bg-muted/50 px-8 py-6 text-base font-medium"
             >
-              View Our Work
+              <Package className="mr-2 w-5 h-5" />
+              View Packages
             </Button>
+          </motion.div>
+
+          {/* Secondary CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-wrap items-center justify-center gap-6 mt-6"
+          >
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Explore Services
+            </button>
+            <a
+              href="tel:+1234567890"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
+            >
+              <Phone className="w-4 h-4" />
+              Call Us Now
+            </a>
           </motion.div>
 
           {/* Stats */}
