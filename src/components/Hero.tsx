@@ -67,7 +67,7 @@ const Hero = () => {
               size="lg"
               variant="outline"
               onClick={() => scrollToSection("packages")}
-              className="border-border/50 bg-muted/30 hover:bg-muted/50 px-8 py-6 text-base font-medium"
+              className="border-border/50 bg-muted/30 px-8 py-6 text-base font-medium"
             >
               <Package className="mr-2 w-5 h-5" />
               View Packages
