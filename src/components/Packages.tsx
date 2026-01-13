@@ -65,15 +65,15 @@ const Packages = () => {
               viewport={{ once: true }}
             >
               <Card
-                className={`relative h-full transition-all duration-300 hover:shadow-xl ${
+                className={`relative h-full flex flex-col transition-all duration-300 hover:shadow-xl ${
                   pkg.popular
-                    ? "border-primary shadow-lg shadow-primary/20"
+                    ? "border-secondary shadow-lg shadow-secondary/20"
                     : "hover:border-primary/50"
                 }`}
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                    <span className="bg-secondary text-secondary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1">
                       <Star className="w-3 h-3" /> Most Popular
                     </span>
                   </div>
@@ -86,22 +86,21 @@ const Packages = () => {
                     <span className="text-muted-foreground">/month</span>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3 mb-8">
+                <CardContent className="pt-6 flex flex-col flex-1">
+                  <ul className="space-y-3 flex-1">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <Check className={`w-5 h-5 shrink-0 mt-0.5 ${pkg.popular ? "text-secondary" : "text-primary"}`} />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
                   <Button
-                    className={`w-full ${
+                    className={`w-full mt-8 ${
                       pkg.popular
-                        ? "bg-primary hover:bg-primary/90"
-                        : "bg-secondary hover:bg-secondary/80"
+                        ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
+                        : "bg-primary hover:bg-primary/90 text-primary-foreground"
                     }`}
-                    variant={pkg.popular ? "default" : "secondary"}
                   >
                     Get Started
                   </Button>
