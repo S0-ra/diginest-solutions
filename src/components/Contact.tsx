@@ -76,7 +76,7 @@ const Contact = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "diginest@gmail.com",
+                  value: "diginest108@gmail.com",
                 },
                 {
                   icon: Phone,
@@ -86,7 +86,7 @@ const Contact = () => {
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "Bastolathar Rd, Pokhara-9, 33700, Kaski",
+                  value: "Bastola Thar Road, Pokhara-9, 33700, Kaski, Nepal",
                 },
               ].map((item, index) => (
                 <motion.div

@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const packages = [
@@ -45,8 +51,7 @@ const Packages = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Choose Your <span className="text-primary">Package</span>
           </h2>
@@ -62,15 +67,13 @@ const Packages = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
+              viewport={{ once: true }}>
               <Card
                 className={`relative h-full flex flex-col transition-all duration-300 hover:shadow-xl ${
                   pkg.popular
                     ? "border-secondary shadow-lg shadow-secondary/20"
                     : "hover:border-primary/50"
-                }`}
-              >
+                }`}>
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="bg-secondary text-secondary-foreground px-4 py-1 rounded-full text-sm font-medium flex items-center gap-1">
@@ -90,18 +93,22 @@ const Packages = () => {
                   <ul className="space-y-3 flex-1">
                     {pkg.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className={`w-5 h-5 shrink-0 mt-0.5 ${pkg.popular ? "text-secondary" : "text-primary"}`} />
+                        <Check
+                          className={`w-5 h-5 shrink-0 mt-0.5 ${pkg.popular ? "text-secondary" : "text-primary"}`}
+                        />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-5 text-xs text-muted-foreground">
+                    *Prices may vary for additional requirements
+                  </p>
                   <Button
-                    className={`w-full mt-8 ${
+                    className={`w-full mt-6 ${
                       pkg.popular
                         ? "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                         : "bg-primary hover:bg-primary/90 text-primary-foreground"
-                    }`}
-                  >
+                    }`}>
                     Get Started
                   </Button>
                 </CardContent>

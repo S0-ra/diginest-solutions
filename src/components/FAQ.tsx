@@ -80,7 +80,7 @@ const FAQ = () => {
                 value={`item-${index}`}
                 className="card-glass border border-border/50 rounded-lg px-6 data-[state=open]:border-primary/50 transition-all duration-300"
               >
-                <AccordionTrigger className="text-left text-foreground hover:text-primary transition-colors py-6 text-lg font-medium">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary transition-colors py-6 text-lg font-medium hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">

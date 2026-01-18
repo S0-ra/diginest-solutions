@@ -89,7 +89,7 @@ const Hero = () => {
               Explore Services
             </button>
             <a
-              href="tel:+1234567890"
+              href="tel:+9779856011762"
               className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
             >
               <Phone className="w-4 h-4" />
@@ -105,9 +105,9 @@ const Hero = () => {
             className="grid grid-cols-3 gap-8 mt-20 pt-10 border-t border-border/30"
           >
             {[
-              { value: "150+", label: "Projects Delivered" },
-              { value: "50+", label: "Happy Clients" },
-              { value: "9", label: "Service Areas" },
+              { value: "5+", label: "Projects Delivered" },
+              { value: "5+", label: "Happy Clients" },
+              { value: "3", label: "Service Areas" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">

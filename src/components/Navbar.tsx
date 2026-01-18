@@ -22,8 +22,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center glow-effect">
-              <span className="font-display font-bold text-primary-foreground text-lg">D</span>
+            <div className="w-10 h-10 rounded-lg  flex items-center justify-center ">
+              <img src="/logo.png" alt="Diginest Logo" />
             </div>
             <span className="font-display font-bold text-xl text-foreground">DigiNest</span>
           </a>
@@ -39,9 +39,6 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
-              Get Started
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}

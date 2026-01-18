@@ -58,7 +58,7 @@ const Testimonials = () => {
             What Our <span className="text-gradient">Clients Say</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our satisfied clients have to say about working with DigiNest.
+            Don't just take our word for it. Here's what our satisfied clients have to say about working with Diginest.
           </p>
         </motion.div>
 
