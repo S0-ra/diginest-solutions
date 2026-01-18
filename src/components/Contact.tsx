@@ -76,17 +76,17 @@ const Contact = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "hello@diginest.com",
+                  value: "diginest@gmail.com",
                 },
                 {
                   icon: Phone,
                   label: "Phone",
-                  value: "+1 (555) 123-4567",
+                  value: "+977 9856011762",
                 },
                 {
                   icon: MapPin,
                   label: "Location",
-                  value: "San Francisco, CA",
+                  value: "Bastolathar Rd, Pokhara-9, 33700, Kaski",
                 },
               ].map((item, index) => (
                 <motion.div
