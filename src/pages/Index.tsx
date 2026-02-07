@@ -7,14 +7,16 @@ import FAQ from "@/components/FAQ";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Introduction from "@/components/Introduction";
+import Integrations from "@/components/Integrations";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <Hero />
-      <Services />
-      <Packages />
+      <Introduction/>
+      <Integrations />
       <Testimonials />
       <FAQ />
       <About />

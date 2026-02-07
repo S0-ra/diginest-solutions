@@ -76,7 +76,7 @@ const Contact = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "diginest108@gmail.com",
+                  value: "contact@diginestsolution.com.np",
                 },
                 {
                   icon: Phone,

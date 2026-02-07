@@ -70,7 +70,7 @@ const Hero = () => {
               className="border-border/50 bg-muted/30 px-8 py-6 text-base font-medium"
             >
               <Package className="mr-2 w-5 h-5" />
-              View Packages
+              View Services
             </Button>
           </motion.div>
 
@@ -81,13 +81,6 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-6 mt-6"
           >
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Explore Services
-            </button>
             <a
               href="tel:+9779856011762"
               className="text-muted-foreground hover:text-primary transition-colors text-sm flex items-center gap-2"
