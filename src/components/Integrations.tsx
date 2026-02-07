@@ -62,18 +62,19 @@ export default function Integrations() {
     <section className="py-24 relative overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid opacity-30" />
-      <div 
+      <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20"
-        style={{ background: 'var(--gradient-glow)' }}
+        style={{ background: "var(--gradient-glow)" }}
       />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 items-center lg:gap-16">
           <div>
             <Tag>Integrations</Tag>
-            <h2 className="text-6xl font-medium mt-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mt-6">
               <span className="text-primary">Technologies</span> We Use
             </h2>
+
             <p className="text-white/50 mt-4 text-lg">
               We leverage modern, reliable technologies to build secure,
               scalable, and high-performance digital solutions tailored to your
