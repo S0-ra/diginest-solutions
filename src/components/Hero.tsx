@@ -26,7 +26,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 border border-border/50 mb-8"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">Your Complete Digital Partner</span>
+            <span className="text-sm text-muted-foreground">Where Ideas Go Digital</span>
           </motion.div>
 
           <motion.h1
