@@ -3,8 +3,54 @@ import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: "success", message: "Message sent successfully! We'll get back to you soon." });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitStatus({ type: "error", message: data.message || "Failed to send message. Please try again." });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: "error", message: "An error occurred. Please try again later." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-t from-muted/30 to-transparent" />
@@ -36,29 +82,62 @@ const Contact = () => {
             className="card-glass rounded-2xl p-8"
           >
             <h3 className="font-display font-semibold text-xl mb-6">Send us a message</h3>
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name"
                   className="bg-muted/50 border-border/50 focus:border-primary"
+                  required
                 />
                 <Input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Your Email"
                   className="bg-muted/50 border-border/50 focus:border-primary"
+                  required
                 />
               </div>
               <Input
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
                 placeholder="Subject"
                 className="bg-muted/50 border-border/50 focus:border-primary"
+                required
               />
               <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Your Message"
                 rows={5}
                 className="bg-muted/50 border-border/50 focus:border-primary resize-none"
+                required
               />
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect">
-                Send Message
+              
+              {submitStatus && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitStatus.type === "success"
+                      ? "bg-green-500/10 text-green-600 border border-green-500/20"
+                      : "bg-red-500/10 text-red-600 border border-red-500/20"
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
+              <Button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 glow-effect disabled:opacity-50"
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </form>
