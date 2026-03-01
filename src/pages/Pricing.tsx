@@ -7,7 +7,9 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 const PricingPage = () => {
-  const [activeTab, setActiveTab] = useState<"marketing" | "website">("marketing");
+  const [activeTab, setActiveTab] = useState<"marketing" | "website">(
+    "marketing",
+  );
   const navigate = useNavigate();
 
   const digitalMarketingPackages = [
@@ -54,7 +56,7 @@ const PricingPage = () => {
   const websitePackages = [
     {
       name: "Basic",
-      price: "NPR 25,000",
+      price: "NPR 20,000",
       features: [
         "5 Page Website",
         "Responsive Design",
@@ -65,12 +67,13 @@ const PricingPage = () => {
     },
     {
       name: "Standard",
-      price: "NPR 45,000",
+      price: "NPR 40,000",
       features: [
         "10 Page Website",
         "Custom UI/UX Design",
         "SEO Optimization",
         "Admin Dashboard",
+        "Content Management System",
         "Speed Optimization",
         "3 Months Free Support",
       ],
@@ -82,10 +85,11 @@ const PricingPage = () => {
         "Unlimited Pages",
         "Custom Web Application",
         "Advanced SEO",
+        "Content Management System",
         "API Integration",
         "Performance Optimization",
         "6 Months Free Support",
-            ],
+      ],
     },
   ];
 
@@ -161,9 +165,7 @@ const PricingPage = () => {
                     {pkg.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <Check className="text-primary mt-1" size={16} />
-                        <span className="text-muted-foreground">
-                          {feature}
-                        </span>
+                        <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
